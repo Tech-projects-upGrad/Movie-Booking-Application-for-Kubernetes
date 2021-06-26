@@ -1,0 +1,4 @@
+eureka:
+  host: "serviceregistry"     
+service:
+  name: "serviceregistry"      

@@ -1,0 +1,14 @@
+{
+	"movie": {
+		"movieId": 1
+	},
+	"user": {
+		"userId": 1,
+		"firstName": "vaishali"
+	},
+	"theatre": {
+		"theatreId": 1,
+		"movieId": 1
+
+	}
+}

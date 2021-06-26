@@ -1,0 +1,11 @@
+image: "mysql"
+imageTag: "8.0"
+port: 3306
+initializationFiles:
+    nrf-db.sql: |-
+      CREATE USER 'upgradpg'@'%'  IDENTIFIED BY 'upgradpg';
+      CREATE DATABASE IF NOT EXISTS upgradpg DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+      ALTER USER 'upgradpg'@'%' IDENTIFIED WITH mysql_native_password BY 'upgradpg';
+    permission.sql: |-
+      GRANT SELECT, INSERT, CREATE, ALTER, DROP, LOCK TABLES, CREATE TEMPORARY TABLES, DELETE, UPDATE, EXECUTE ON upgradpg.* TO 'upgradpg'@'%';
+      FLUSH PRIVILEGES;

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: moviesvc  
+data: 
+  MYSQL_HOST: {{ .Values.mysql.host }}
+  EUREKA_HOST_NAME: {{ .Values.eureka.host }}
+  CONFIGSERVER_HOST: {{ .Values.configServer.host }}
+  SERVICE_NAME: {{ .Values.service.name }}

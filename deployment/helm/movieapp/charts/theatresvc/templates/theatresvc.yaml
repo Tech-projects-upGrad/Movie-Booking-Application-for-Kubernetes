@@ -1,0 +1,61 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: theatresvc-hpa 
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: theatresvc 
+  minReplicas: 1
+  maxReplicas: 1
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 90 
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: theatresvc
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: theatresvc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: theatresvc
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8080'
+        prometheus.io/path: /actuator/prometheus
+    spec:
+      containers:
+      - name: theatresvc
+        image: 105420052274.dkr.ecr.us-east-1.amazonaws.com/theatresvc 
+        envFrom:
+        - configMapRef:
+            name: theatresvc
+        resources:
+          limits:
+            cpu: "0.5"
+          requests:
+            cpu: "0.5"    
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: theatresvc
+  labels:
+    app.kubernetes.io/name: theatresvc
+spec:
+  ports:
+  - port: 8083
+    targetPort: 8083
+  selector:
+    app.kubernetes.io/name: theatresvc

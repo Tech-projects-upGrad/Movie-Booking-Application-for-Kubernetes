@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apigateway
+data: 
+  EUREKA_HOST_NAME: {{ .Values.eureka.host }}
+  SERVICE_NAME: {{ .Values.service.name }}

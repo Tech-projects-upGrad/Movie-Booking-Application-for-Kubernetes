@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "http-client"
+  labels:
+    app: "http-client"
+spec:
+  containers:
+  - name: http-client
+    image: "ellerbrock/alpine-bash-curl-ssl"
+    command: ["/bin/bash","-c","tail -f /dev/null"]

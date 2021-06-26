@@ -9,3 +9,9 @@ spec:
   - name: http-client
     image: "upgrad1/alpine-bash-curl"
     command: ["/bin/bash","-c","tail -f /dev/null"]
+    resources:
+      limits:
+        cpu: "0.2"
+      requests:
+        cpu: "0.2"    
+

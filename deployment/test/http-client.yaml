@@ -7,5 +7,5 @@ metadata:
 spec:
   containers:
   - name: http-client
-    image: "ellerbrock/alpine-bash-curl-ssl"
+    image: "upgrad1/alpine-bash-curl"
     command: ["/bin/bash","-c","tail -f /dev/null"]

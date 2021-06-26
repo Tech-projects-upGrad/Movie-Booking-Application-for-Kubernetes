@@ -1,4 +1,8 @@
 eureka:
   host: "serviceregistry"     
 service:
-  name: "configserver"      
+  name: "configserver"     
+image:
+  name: "105420052274.dkr.ecr.us-east-1.amazonaws.com/configserver"
+  tag: "latest"      
+

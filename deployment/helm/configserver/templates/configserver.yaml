@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: configserver
-        image: 105420052274.dkr.ecr.us-east-1.amazonaws.com/configserver:latest 
+        image:  {{ .Values.image.name }}:{{ .Values.image.tag }} 
         envFrom:
         - configMapRef:
             name: configserver

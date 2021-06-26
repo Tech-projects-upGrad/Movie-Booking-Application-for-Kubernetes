@@ -1,0 +1,16 @@
+apigateway:
+  image:
+    name: "105420052274.dkr.ecr.us-east-1.amazonaws.com/apigateway"
+    tag: "latest"     
+moviesvc:
+  image:
+    name: "105420052274.dkr.ecr.us-east-1.amazonaws.com/moviesvc"
+    tag: "latest"     
+usersvc:
+  image:
+    name: "105420052274.dkr.ecr.us-east-1.amazonaws.com/usersvc"
+    tag: "latest"     
+theatresvc:
+  image:
+    name: "105420052274.dkr.ecr.us-east-1.amazonaws.com/theatresvc"
+    tag: "latest"     

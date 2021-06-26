@@ -2,3 +2,7 @@ eureka:
   host: "serviceregistry"     
 service:
   name: "serviceregistry"      
+image:
+  name: "105420052274.dkr.ecr.us-east-1.amazonaws.com/serviceregistry"
+  tag: "latest"      
+

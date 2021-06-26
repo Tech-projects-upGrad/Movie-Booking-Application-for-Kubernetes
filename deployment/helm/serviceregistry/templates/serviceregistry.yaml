@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: serviceregistry
-        image: 105420052274.dkr.ecr.us-east-1.amazonaws.com/serviceregistry
+        image:  {{ .Values.image.name }}:{{ .Values.image.tag }} 
         envFrom:
         - configMapRef:
             name: serviceregistry

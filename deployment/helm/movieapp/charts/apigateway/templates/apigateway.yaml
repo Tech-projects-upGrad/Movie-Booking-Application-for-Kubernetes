@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: apigateway
-        image: 105420052274.dkr.ecr.us-east-1.amazonaws.com/apigateway 
+        image:  {{ .Values.image.name }}:{{ .Values.image.tag }} 
         envFrom:
         - configMapRef:
             name: apigateway
